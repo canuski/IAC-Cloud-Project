@@ -2,21 +2,21 @@
 roles:
 
   - name: canuski.clamav_setup
-    src: https://github.com/canuski/clamav_setup.git
+    src: https://github.com/canuski/clamav_setup
     scm: git
     version: main
 
   - name: canuski.docker_setup
-    src: https://github.com/canuski/docker_setup_ansible.git
+    src: https://github.com/canuski/docker_setup_ansible
     scm: git
     version: main
 
   - name: canuski.docker-compose_setup
-    src: https://github.com/canuski/docker-compose_setup-anisble.git
+    src: https://github.com/canuski/docker-compose_setup-anisble
     scm: git
     version: main
 
   - name: canuski.packages_install
-    src: https://github.com/canuski/package_install-role.git
+    src: https://github.com/canuski/package_install-role
     scm: git
     version: main
