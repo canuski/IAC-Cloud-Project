@@ -1,0 +1,46 @@
+---
+# tasks file for ubuntu-firewall_setup
+# tasks file for firewall_setup
+- name: Install firewalld package
+  apt:
+    name: firewalld
+    state: present
+
+- name: Start and enable firewalld service
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
+
+- name: Allow port 22 (SSH) through firewall
+  firewalld:
+    port: 22/tcp
+    permanent: yes
+    state: enabled
+
+- name: Allow port 5000 through firewall
+  firewalld:
+    port: 5000/tcp
+    permanent: yes
+    state: enabled
+
+- name: Set specific allowed services
+  firewalld:
+    service: "{{ item }}"
+    state: enabled
+    permanent: true
+  loop:
+    - ssh
+    - http
+
+- name: Ensure SSH logging is enabled
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?\s*LogLevel\s+'
+    line: 'LogLevel VERBOSE'
+    state: present
+  notify:
+    - restart sshd
+
+- name: Reload firewalld to apply changes
+  ansible.builtin.command: firewall-cmd --reload

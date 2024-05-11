@@ -1,0 +1,49 @@
+---
+# tasks file for ubuntu-clamav_setup
+- name: Install ClamAV and related packages
+  apt:
+    name:
+      - clamav
+      - clamav-daemon
+      - clamav-freshclam
+  become: yes
+
+# - name: Modify ClamAV config file
+#   lineinfile:
+#     path: /etc/clamd.d/scan.conf
+#     regexp: '^Example'
+#     line: '#Example'
+#   become: yes
+
+# - name: Enable LocalSocket in ClamAV configuration
+#   lineinfile:
+#     path: /etc/clamd.d/scan.conf
+#     regexp: '^#LocalSocket '
+#     line: 'LocalSocket /var/run/clamd.scan/clamd.sock'
+#   become: yes
+
+# - name: Update ClamAV database
+#   command: freshclam  
+#   become: yes
+
+- name: Start ClamAV service
+  systemd:
+    name: clamav-daemon
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Run permissions command 1
+  command: sudo chown -R clamav:clamav /var/lib/clamav
+  become: yes
+
+- name: Run permissions command 2
+  command: sudo chmod -R 775 /var/lib/clamav
+  become: yes
+
+- name: Add cron job to run freshclam
+  cron:
+    name: "Update database"
+    minute: "*/2"
+    job: "/usr/bin/freshclam"
+    state: present
