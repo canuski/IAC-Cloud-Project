@@ -1,15 +1,15 @@
 - name: canuski.clamav_setup
-  src: git@github.com:canuski/IAC-Cloud-Project/ansible/clamav_setup
+  src: git@github.com:canuski/IAC-Cloud-Project.git/ansible/clamav_setup
   version: main
 
 - name: canuski.docker_setup
-  src: git@github.com:canuski/IAC-Cloud-Project/ansible/docker_setup
+  src: git@github.com:canuski/IAC-Cloud-Project.git/ansible/docker_setup
   version: main
 
-  - name: canuski.docker-compose_setup
-  src: git@github.com:canuski/IAC-Cloud-Project/ansible/docker-compose_setup
+- name: canuski.docker-compose_setup
+  src: git@github.com:canuski/IAC-Cloud-Project.git/ansible/docker-compose_setup
   version: main
 
-  - name: canuski.packages_install
-  src: git@github.com:canuski/IAC-Cloud-Project/ansible/packages_install
+- name: canuski.packages_install
+  src: git@github.com:canuski/IAC-Cloud-Project.git/ansible/packages_install
   version: main
