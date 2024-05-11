@@ -1,0 +1,47 @@
+---
+# tasks file for clamav_setup
+    - name: Install ClamAV
+      dnf:
+        name:
+          - clamav
+          - clamd
+          - clamav-update
+        state: present
+      become: yes
+
+    - name: Modify ClamAV config file
+      lineinfile:
+        path: /etc/clamd.d/scan.conf
+        regexp: '^Example'
+        line: '#Example'
+      become: yes
+
+    - name: Enable LocalSocket in ClamAV configuration
+      lineinfile:
+        path: /etc/clamd.d/scan.conf
+        regexp: '^#LocalSocket '
+        line: 'LocalSocket /var/run/clamd.scan/clamd.sock'
+      become: yes
+
+    - name: Update ClamAV database
+      command: freshclam  
+      become: yes
+
+    - name: Start ClamAV service
+      systemd:
+        name: clamd@scan
+        state: started
+        enabled: yes
+      become: yes
+      
+    - name: Run permissions command 1
+      command: sudo chown -R 100:101 /var/lib/clamav
+      become: yes
+
+    - name: Run permissions command 2
+      command: sudo chown -R 991:991 /var/lib/clamav
+      become: yes
+
+    - name: Run permissions command 3
+      command: sudo chmod -R 775 /var/lib/clamav
+      become: yes

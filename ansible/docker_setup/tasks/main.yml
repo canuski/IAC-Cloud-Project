@@ -1,0 +1,32 @@
+---
+# tasks file for docker_setup
+    - name: Add Docker CE repository
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docker-ce.repo
+        mode: 0644
+
+
+    - name: Install Docker CE, Docker CLI, and containerd.io
+      dnf:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: present
+
+    - name: Start Docker service
+      systemd:
+        name: docker
+        state: started
+
+    - name: Enable Docker service to start on boot
+      systemd:
+        name: docker
+        enabled: yes
+
+    - name: Install Docker Compose Plugin
+      dnf:
+        name: docker-compose-plugin
+        state: present
+
