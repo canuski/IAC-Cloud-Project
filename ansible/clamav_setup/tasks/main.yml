@@ -1,5 +1,9 @@
 ---
 # tasks file for clamav_setup
+    - name: Install EPEL packages
+      command: sudo dnf -y install epel-release
+      become: yes
+
     - name: Install ClamAV
       dnf:
         name:

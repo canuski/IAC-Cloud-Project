@@ -16,7 +16,6 @@
         name: '*'
         state: latest
  
-
     - name: Install Git
       dnf:
         name: git
