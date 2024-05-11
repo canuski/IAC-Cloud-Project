@@ -6,6 +6,7 @@
     - clamav_setup
     - docker_setup
     - docker-compose_setup
+    - firewall_setup
 
   
 

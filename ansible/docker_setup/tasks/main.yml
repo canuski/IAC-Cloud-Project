@@ -6,7 +6,6 @@
         dest: /etc/yum.repos.d/docker-ce.repo
         mode: 0644
 
-
     - name: Install Docker CE, Docker CLI, and containerd.io
       dnf:
         name:
