@@ -1,0 +1,45 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+    <!-- Link to your external CSS file -->
+    <!-- Add Google Fonts in the head to use Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <script>
+        function uploadFile(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            var form = document.getElementById('uploadForm'); // Get the form element
+            var formData = new FormData(form); // Create a FormData object from the form
+
+            // Use the Fetch API to send the data to the server
+            fetch('/upload', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json()) // Parse the JSON response
+            .then(data => {
+                var messageDiv = document.getElementById('message'); // Get the message div
+                if (data.status === 'success') { // Check for success
+                    messageDiv.textContent = data.message; // Display success message
+                } else {
+                    messageDiv.textContent = `Error: ${data.message}`; // Display error message
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error); // Log any errors
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Upload a File</h1>
+    <form id="uploadForm" onsubmit="uploadFile(event)" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    <div id="message"></div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* static/styles.css */
+body {
+    font-family: 'Roboto', sans-serif;  /* Modern font choice */
+    background-color: #f2f2f2;          /* Light background for contrast */
+    color: #333;                        /* Dark text color for readability */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2.5em;                   /* Large heading */
+    text-align: center;                 /* Centered heading */
+    margin-top: 20px;
+    color: #555;                        /* Darker heading color */
+}
+
+form {
+    display: flex;
+    flex-direction: column;             /* Vertical stacking */
+    align-items: center;                /* Center elements */
+    background: linear-gradient(to bottom, #f9f9f9, #f2f2f2); /* Subtle gradient */
+    border: 1px solid #ddd;             /* Subtle border */
+    border-radius: 15px;                /* More rounded corners */
+    padding: 25px;                      /* Padding for spacing */
+    width: 80%;                         /* Form width */
+    max-width: 700px;                   /* Maximum form width */
+    margin: 20px auto;                  /* Center form horizontally */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    transition: box-shadow 0.3s;        /* Smooth transition for shadow */
+}
+
+form:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+input[type="file"] {
+    padding: 12px;                       /* Increased padding */
+    border: 1px solid #ccc;              /* Border for input */
+    border-radius: 10px;                 /* More rounded corners */
+    margin-bottom: 20px;                 /* More space between elements */
+    font-size: 1.1em;                     /* Slightly larger font */
+    width: 100%;                         /* Full-width input */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+input[type="submit"] {
+    background-color: #3498db;           /* Bright blue for a pop of color */
+    color: white;                         /* White text */
+    padding: 12px 30px;                   /* Increased padding */
+    border: none;                          /* No border */
+    border-radius: 10px;                   /* Rounded corners */
+    cursor: pointer;                       /* Pointer cursor */
+    font-size: 1.2em;                       /* Larger font */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;           /* Darker blue on hover */
+    transform: scale(1.05);              /* Slight scale-up effect */
+}
+
+#message {
+    font-size: 1.3em;                      /* Larger font for message */
+    color: #333;                           /* Dark text color */
+    text-align: center;                    /* Center message */
+    margin-top: 25px;                      /* Increased margin */
+    max-width: 700px;                      /* Align with form width */
+    margin: 0 auto;                        /* Center horizontally */
+    background: #f9f9f9;                   /* Light background */
+    padding: 15px;                         /* Padding for message */
+    border: 1px solid #ddd;                /* Border for message */
+    border-radius: 10px;                    /* Rounded corners */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Shadow for message */
+}
