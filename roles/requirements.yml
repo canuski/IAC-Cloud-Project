@@ -2,7 +2,7 @@
 roles:
 
   - name: canuski.clamav_setup
-    src: https://github.com/canuski/IAC-Cloud-Project/ansible/clamav_setup
+    src: https://github.com/canuski/IAC-Cloud-Project/tree/main/ansible/clamav_setup
     scm: git
     version: main
 
