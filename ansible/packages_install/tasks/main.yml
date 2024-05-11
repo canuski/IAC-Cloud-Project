@@ -7,15 +7,11 @@
       become: yes
 
     - name: Install EPEL packages
-      command: sudo dnf -y install epel-release
-      become: yes
-      
-    - name: Update package cache using dnf
-      become: true
       dnf:
-        name: '*'
-        state: latest
- 
+        name: epel-release
+        state: present
+      become: yes
+
     - name: Install Git
       dnf:
         name: git
