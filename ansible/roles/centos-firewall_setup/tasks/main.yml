@@ -1,0 +1,46 @@
+---
+# tasks file for centos-firewall_setup
+    - name: Install firewalld package
+      yum:
+        name: firewalld
+        state: present
+
+    - name: Start and enable firewalld service
+      systemd:
+        name: firewalld
+        state: started
+        enabled: yes
+
+    - name: Allow port 22 (SSH) through firewall
+      firewalld:
+        port: 22/tcp
+        state: enabled
+
+    - name: Allow port 5000 through firewall
+      firewalld:
+        port: 5000/tcp
+        state: enabled
+
+    - name: Set specific allowed services
+      firewalld:
+        service: "{{ item }}"
+        state: enabled
+      loop:
+        - ssh
+        - http
+
+    - name: Set default zone to drop or reject traffic
+      shell: firewall-cmd --permanent --zone=public --set-target=DROP
+      when: ansible_distribution_major_version == "9"
+
+    - name: Ensure SSH logging is enabled
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?\s*LogLevel\s+'
+        line: 'LogLevel VERBOSE'
+        state: present
+      notify:
+        - restart sshd
+
+    - name: Reload firewalld to apply changes
+      command: firewall-cmd --reload
