@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  virus_scanner:
+    image: canuski/clamavscanner:latest
+    volumes:
+      - /root/Cloud-Sandbox/test_files:/app/test_files
+    depends_on:
+      - clamav
+
+  clamav:
+    image: mkodockx/docker-clamav:alpine
+    restart: unless-stopped
+    volumes:
+    - /var/lib/clamav:/var/lib/clamav
+
+  website:
+    image: canuski/clamavwebsite:latest
+    ports:
+      - "5000:5000" 
+    restart: unless-stopped
+    volumes:
+      - /root/Cloud-Sandbox/website:/app  
+      - /root/Cloud-Sandbox/test_files:/app/test_files
+    user: "100:101"
+
+
