@@ -1,0 +1,4 @@
+python-telegram-bot
+telegram
+python-dotenv
+asyncio
