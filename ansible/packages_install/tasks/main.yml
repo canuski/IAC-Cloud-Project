@@ -12,6 +12,13 @@
         state: present
       become: yes
       
+    - name: Update package cache using dnf
+      become: true
+      dnf:
+        name: '*'
+        state: latest
+ 
+
     - name: Install Git
       dnf:
         name: git
