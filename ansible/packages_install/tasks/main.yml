@@ -7,9 +7,7 @@
       become: yes
 
     - name: Install EPEL packages
-      dnf:
-        name: epel-release
-        state: present
+      command: sudo dnf -y install epel-release
       become: yes
       
     - name: Update package cache using dnf
