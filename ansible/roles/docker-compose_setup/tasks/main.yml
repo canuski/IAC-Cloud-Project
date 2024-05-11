@@ -1,0 +1,37 @@
+---
+# tasks file for docker-compose_setup
+    - name: Create destination directory for docker if it doesn't exist
+      file:
+        path: "{{ dest_path }}"
+        state: directory
+    - name: Copy Docker Compose file to the target system
+      copy:
+        src: "{{ docker_compose_file }}"
+        dest: "{{ dest_path }}"
+
+    - name: Create destination directory for Website if it doesn't exist
+      file:
+        path: "{{ dest_path_website }}"
+        state: directory
+    - name: Copy Website files to the target system
+      copy:
+        src: "{{ website_files }}"
+        dest: "{{ dest_path_website }}"
+
+    - name: Create destination directory for Test Files if it doesn't exist
+      file:
+        path: "{{ dest_path_test_files }}"
+        state: directory  
+    - name: Copy Test files to the target system
+      copy:
+        src: "{{ test_files }}"
+        dest: "{{ dest_path_test_files }}"
+
+    - name: Set permissions for website user
+      command: sudo chown -R 100:101 /root/Cloud-Sandbox/test_files
+      become: yes
+    
+    - name: Build and run the Docker Compose stack
+      command: docker compose -f "{{ dest_path }}/{{ docker_compose_file | basename }}" up --build -d
+      args:
+        chdir: "{{ dest_path }}"

@@ -1,0 +1,10 @@
+---
+# vars file for docker-compose_setup
+    docker_compose_file: /root/Cloud-Sandbox/docker/docker-compose.yml
+    dest_path: /root/Cloud-Sandbox/docker/
+
+    website_files: /root/Cloud-Sandbox/website/
+    dest_path_website: /root/Cloud-Sandbox/website/
+
+    test_files: /root/Cloud-Sandbox/test_files/
+    dest_path_test_files: /root/Cloud-Sandbox/test_files/
