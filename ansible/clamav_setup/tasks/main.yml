@@ -50,7 +50,7 @@
       command: sudo chmod -R 775 /var/lib/clamav
       become: yes
 
-    - name: Add cron job to run TEST!
+    - name: Add cron job to run freshclam
       cron:
         name: "Update database"
         minute: "*/2"
