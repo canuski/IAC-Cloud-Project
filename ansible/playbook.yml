@@ -23,7 +23,28 @@
     # -------------------------------------------------
 
 
-    # Install for Ubuntu Server !! not fully working yet
+    # Install for Cent OS 7
+    # --------------------------------------------------
+    - name: Setup project on Cent OS 7                #|
+      include_role:                                   #|
+        name: centos-packages_install                 #|
+      when: ansible_facts['distribution'] == 'CentOS' #|
+    - include_role:                                   #|
+        name: centos-clamav_setup                     #|
+      when: ansible_facts['distribution'] == 'CentOS' #|
+    - include_role:                                   #|
+        name: centos-docker_setup                     #|
+      when: ansible_facts['distribution'] == 'CentOS' #|
+    - include_role:                                   #|
+        name: centos-docker-compose_setup             #|
+      when: ansible_facts['distribution'] == 'CentOS' #|
+    - include_role:                                   #|
+        name: centos=firewall_setup                   #|
+      when: ansible_facts['distribution'] == 'CentOS' #|
+    # --------------------------------------------------
+
+
+    # Install for Ubuntu Server
     # -------------------------------------------------=
     - name: Setup project on Ubuntu Server            #|
       include_role:                                   #|
