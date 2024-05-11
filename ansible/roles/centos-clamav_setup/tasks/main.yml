@@ -13,23 +13,23 @@
         state: present
       become: yes
 
-    - name: Modify ClamAV config file
-      lineinfile:
-        path: /etc/clamd.conf
-        regexp: '^Example'
-        line: '#Example'
-      become: yes
+    # - name: Modify ClamAV config file
+    #   lineinfile:
+    #     path: /etc/clamd.conf
+    #     regexp: '^Example'
+    #     line: '#Example'
+    #   become: yes
 
-    - name: Enable LocalSocket in ClamAV configuration
-      lineinfile:
-        path: /etc/clamd.conf
-        regexp: '^#LocalSocket '
-        line: 'LocalSocket /var/run/clamd.scan/clamd.sock'
-      become: yes
+    # - name: Enable LocalSocket in ClamAV configuration
+    #   lineinfile:
+    #     path: /etc/clamd.conf
+    #     regexp: '^#LocalSocket '
+    #     line: 'LocalSocket /var/run/clamd.scan/clamd.sock'
+    #   become: yes
 
-    - name: Update ClamAV database
-      command: freshclam  
-      become: yes
+    # - name: Update ClamAV database
+    #   command: freshclam  
+    #   become: yes
 
     - name: Start ClamAV service
       systemd:
