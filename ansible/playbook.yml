@@ -1,15 +1,44 @@
 ---
-- hosts: rocky_nodes
+- hosts: nodes
   become: yes
-  roles:
-    - packages_install
-    - clamav_setup
-    - docker_setup
-    - docker-compose_setup
-    - firewall_setup
+  tasks:
+    # Install for Rocky Linux 9
+    # -------------------------------------------------
+    - name: Setup project on Rocky Linux 9           #|
+      include_role:                                  #|
+        name: packages_install                       #|
+      when: ansible_facts['distribution'] == 'Rocky' #|
+    - include_role:                                  #|
+        name: clamav_setup                           #|
+      when: ansible_facts['distribution'] == 'Rocky' #|
+    - include_role:                                  #|
+        name: docker_setup                           #|
+      when: ansible_facts['distribution'] == 'Rocky' #|
+    - include_role:                                  #|
+        name: docker-compose_setup                   #|
+      when: ansible_facts['distribution'] == 'Rocky' #|
+    - include_role:                                  #|
+        name: firewall_setup                         #|
+      when: ansible_facts['distribution'] == 'Rocky' #|
+    # -------------------------------------------------
 
-  
 
-
-
-
+    # Install for Ubuntu Server !! not fully working yet
+    # -------------------------------------------------=
+    - name: Setup project on Ubuntu Server            #|
+      include_role:                                   #|
+        name: ubuntu-packages_install                 #|
+      when: ansible_facts['distribution'] == 'Ubuntu' #|
+    - include_role:                                   #|
+        name: ubuntu-clamav_setup                     #|
+      when: ansible_facts['distribution'] == 'Ubuntu' #|
+    - include_role:                                   #|
+        name: ubuntu-docker_setup                     #| 
+      when: ansible_facts['distribution'] == 'Ubuntu' #|
+    - include_role:                                   #|
+        name: ubuntu-docker-compose_setup             #|
+      when: ansible_facts['distribution'] == 'Ubuntu' #|
+    - include_role:                                   #|
+        name: ubuntu-firewall_setup                   #|
+      when: ansible_facts['distribution'] == 'Ubuntu' #|
+    # -------------------------------------------------=
