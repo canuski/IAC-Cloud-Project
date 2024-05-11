@@ -2,7 +2,7 @@
 roles:
 
   - name: canuski.clamav_setup
-    src: https://github.com/canuski/clamav_setup
+    src: git@github.com:canuski/clamav_setup.git
     scm: git
     version: main
 
