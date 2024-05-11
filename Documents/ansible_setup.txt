@@ -1,0 +1,15 @@
+sudo dnf update -y
+
+sudo dnf install -y ansible
+
+ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa -N ''
+
+ssh-copy-id user@target_node_ip
+
+# Create an hosts file
+
+ansible all -i ~/inventory -m ping
+
+# Test playbook that updates system packages
+
+ansible-playbook -i hosts test_playbook.yml
