@@ -39,7 +39,7 @@
         name: centos-docker-compose_setup             #|
       when: ansible_facts['distribution'] == 'CentOS' #|
     - include_role:                                   #|
-        name: centos=firewall_setup                   #|
+        name: centos-firewall_setup                   #|
       when: ansible_facts['distribution'] == 'CentOS' #|
     # --------------------------------------------------
 
