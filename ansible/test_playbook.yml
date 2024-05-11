@@ -2,8 +2,10 @@
 - hosts: rocky_nodes
   become: yes
   tasks:
-    -  name: Update all packages
-       dnf:
-         name: '*'
-         state: latest
+    - name: Add cron job to run daily at 12am
+      cron:
+        name: "Update database"
+        minute: "*/2"
+        job: "./update_database.sh"
+        state: present
 

@@ -15,6 +15,7 @@ COPY virus_scan_script.py /app/
 COPY telegram_sender.py /app/
 COPY requirements.txt /app/
 COPY .env /app/.env
+COPY update_database.sh /app/
 COPY clamd.conf /etc/clamav/clamd.conf
 
 # Install any needed dependencies specified in requirements.txt
