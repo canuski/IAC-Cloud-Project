@@ -31,12 +31,12 @@
     #   command: freshclam  
     #   become: yes
 
-    - name: Start ClamAV service
-      systemd:
-        name: clamd@scan
-        state: started
-        enabled: yes
-      become: yes
+    # - name: Start ClamAV service
+    #   systemd:
+    #     name: clamd@scan
+    #     state: started
+    #     enabled: yes
+    #   become: yes
       
     - name: Run permissions command 1
       command: sudo chown -R 100:101 /var/lib/clamav
