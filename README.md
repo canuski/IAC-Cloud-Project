@@ -7,9 +7,10 @@ Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een
 ![Screenshot Telegram](image.png)
 
 ## Project Structuur Overzicht
+```
 .
 ├── ansible
-│   ├── ansible.cfg           # Config file for ansible
+│   ├── ansible.cfg           # Config file for ansible 
 │   ├── playbooks             # Playbooks directory
 │   ├── roles                 # Has all the needed roles
 │   └── vars                  # Main variable file, overwritten by Semaphore variables
@@ -27,7 +28,7 @@ Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een
 │   └── test_virus 
 ├── vars                      # Env file
 └── website                   # Website files
-
+```
 # Vereisten
 - Operating System: Rocky Linux 9 met de meest recente updates.
 - Ansible
