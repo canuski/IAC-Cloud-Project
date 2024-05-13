@@ -89,6 +89,9 @@ Installeerd de noodzakelijke pakketten voor Docker te gebruiken op Rocky Linux 9
 [main.yml](https://github.com/canuski/IAC-Cloud-Project/blob/main/ansible/roles/docker-compose_setup/tasks/main.yml)
 Zet de docker omgevingen op en kopieert de nodige files.
 
+### Role 'firewall_setup'
+[main.yml](https://github.com/canuski/IAC-Cloud-Project/tree/main/ansible/roles/firewall_setup)
+Zet een firewall op om enkel noodzakelijke services door te laten.
 
 ## Extra's
 Ik heb een aantal extras gemaakt.
