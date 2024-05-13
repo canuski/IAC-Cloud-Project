@@ -2,7 +2,7 @@
 Projectopdracht Oscar Alexander
 
 ## Introductie
-Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een volledig functioneel, cloud-ready open-surce solution op Rocky Linux 9 te bouwen. Deze rol zorgt voor gemakkelijke deployment over verschillende IAAS cloud providers of VM enviorments.  Het is ontworpen om een gemakkelijk te bereiken virus scanner in werking te brengen a.d.h.v Clamav scans. Je upload files via een local hosted website, en krijgt daarna het resultaat van de scan op je gsm te zien.
+Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een volledig functioneel, cloud-ready open-source solution op Rocky Linux 9 te bouwen. Deze rol zorgt voor gemakkelijke deployment over verschillende IAAS cloud providers of VM environments.  Het is ontworpen om een gemakkelijk te bereiken virus scanner in werking te brengen a.d.h.v Clamav scans. Je upload files via een local hosted website, en krijgt daarna het resultaat van de scan op je gsm te zien.
 <br></br>
 ![Screenshot Telegram](image.png)
 
@@ -39,7 +39,7 @@ Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een
 ### Bewerken van configuratie 
 Configureer eerst twee belangrijke bestanden zodat de deploy lukt.
 1. **vars/main.yml**
-    Als je geen Semaphore gebruikt moet je de variabelen instellen. Normaal is de default configuratie oke. Als je Semaphore gebruikt kan je de variabelen aanpassen via de enviorment:
+    Als je er geen Semaphore wordt gebruikt moet je de variabelen instellen. Normaal is de default configuratie oke. Als je Semaphore gebruikt kan je de variabelen aanpassen via de environment:
 ![image](https://github.com/canuski/IAC-Cloud-Project/assets/125011800/2c8e9ddc-37df-46e3-a763-33e9a9314e4e)
 
 2. **playbooks/hosts**
@@ -58,7 +58,7 @@ Ik licht hier kort de belangrijkste software componenten toe:
 - Docker Compose 
 - Ansible - Deployment
 - Semaphore - UI for Ansible
-- Python - Website run time enviorment
+- Python - Website run time environment
 - Flask - Website hosting
 
 ### Systemen met support
