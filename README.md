@@ -45,17 +45,17 @@ Roles
 -----
 In de [/ansible/roles/](https://github.com/canuski/IAC-Cloud-Project/tree/main/ansible/roles) vind je alle roles terug die ik gebruik. Hieronder licht ik alle roles toe.
 
-#### Role 'packages_install' 
+### Role 'packages_install' 
 [main.yml](https://github.com/canuski/IAC-Cloud-Project/blob/main/ansible/roles/packages_install/tasks/main.yml)
 Deze rol heb ik geschreven om te zorgen dat alle noodzakelijke software packages geinstalleerd zijn, de installatie wijze verschilt van OS to OS, ik foucus nu op diegene voor Rocky Linux 9. 
 
 Ik begin met het updaten van alle packages naar de meest recente versie. Dan installeer ik de EPEL package voor Rocky Linux. Dan installeer ik Git, zodat ik de repoistories kan clonen. Dan installeer ik pip3, een handig tool om packages te installeren. Dan installeer ik 3 pacakges die ik nodig heb voor het opzetten van de website, en het sturen van telegram berichten.
 
-#### Role 'set_hostname'
+### Role 'set_hostname'
 [main.yml](https://github.com/canuski/IAC-Cloud-Project/blob/main/ansible/roles/set_hostname/tasks/main.yml)
 Zet simpleweg de hostname op een geconfigueerde variablen.
 
-#### Role 'clamav_setup'
+### Role 'clamav_setup'
 [main.yml](https://github.com/canuski/IAC-Cloud-Project/blob/main/ansible/roles/clamav_setup/tasks/main.yml) 
 Deze rol installeerd en zet de clamav configuratie op.
 
