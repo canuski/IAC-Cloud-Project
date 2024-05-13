@@ -1,3 +1,5 @@
+hostname: Salaf
+
 docker_compose_file: /root/Cloud-Sandbox/docker/docker-compose.yml
 dest_path: /root/Cloud-Sandbox/docker/
 

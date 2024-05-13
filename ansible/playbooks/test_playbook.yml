@@ -1,11 +1,7 @@
 ---
-- hosts: rocky_nodes
+- hosts: nodes
   become: yes
   tasks:
-    - name: Add cron job to run daily at 12am
-      cron:
-        name: "Update database"
-        minute: "*/2"
-        job: "./update_database.sh"
-        state: present
+    - name: Reboot the system
+      reboot:
 

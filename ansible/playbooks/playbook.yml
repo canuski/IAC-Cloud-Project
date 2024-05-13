@@ -3,6 +3,8 @@
   become: yes
   vars_files:
     - ../vars/main.yml
+  roles:
+    - set_hostname
   tasks:
     # Install for Rocky Linux 9
     # -------------------------------------------------
@@ -47,7 +49,7 @@
 
 
     # Install for Ubuntu Server
-    # -------------------------------------------------=
+    # --------------------------------------------------
     - name: Setup project on Ubuntu Server            #|
       include_role:                                   #|
         name: ubuntu-packages_install                 #|
@@ -64,4 +66,7 @@
     - include_role:                                   #|
         name: ubuntu-firewall_setup                   #|
       when: ansible_facts['distribution'] == 'Ubuntu' #|
-    # -------------------------------------------------=
+    # --------------------------------------------------
+
+    - name: Reboot the system
+      reboot: 
