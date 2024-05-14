@@ -1,4 +1,5 @@
 python-telegram-bot
 telegram
+pyyaml
 python-dotenv
 asyncio

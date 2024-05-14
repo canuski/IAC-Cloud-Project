@@ -2,15 +2,20 @@
 import telegram 
 import telegram.constants 
 import os
+import yaml
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
+# # Load environment variables from .env file
+# load_dotenv()
 
+with open('telegram_vars.yml', 'r') as file:
+    config = yaml.safe_load(file)
 
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+# TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+# TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
+TELEGRAM_BOT_TOKEN = config.get("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = config.get("TELEGRAM_CHAT_ID")
 
 async def send_telegram_msg(msg):
     bot = telegram.Bot(token=TELEGRAM_BOT_TOKEN)

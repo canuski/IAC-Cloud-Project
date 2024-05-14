@@ -4,6 +4,7 @@ services:
   virus_scanner:
     image: canuski/clamavscanner:latest
     volumes:
+      - /root/Cloud-Sandbox/ansible/vars/telegram_vars.yml:/app/telegram_vars.yml
       - /root/Cloud-Sandbox/test_files:/app/test_files
     depends_on:
       - clamav
