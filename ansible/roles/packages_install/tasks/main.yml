@@ -28,8 +28,8 @@
       command: pip3 install python-telegram-bot
       become: yes
   
-    - name: Install python3-dotenv with pip3
-      command: pip3 install python-dotenv
+    - name: Install pyyaml with pip3
+      command: pip3 install pyyaml
       become: yes
 
     - name: Install Flask with pip3

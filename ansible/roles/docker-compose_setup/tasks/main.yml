@@ -26,6 +26,15 @@
       copy:
         src: "{{ test_files }}"
         dest: "{{ dest_path_test_files }}"
+    
+    - name: Create destination directory for Telegram Vars if it doesn't exist
+      file:
+        path: "{{ dest_path_telegram_vars }}"
+        state: directory  
+    - name: Copy telegram vars to target system
+      copy:
+        src: "{{ telegram_vars }}"
+        dest: "{{ dest_path_telegram_vars }}"
 
     - name: Set permissions for website user
       command: sudo chown -R 100:101 /root/Cloud-Sandbox/test_files

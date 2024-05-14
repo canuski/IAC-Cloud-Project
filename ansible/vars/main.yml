@@ -8,3 +8,6 @@ dest_path_website: /root/Cloud-Sandbox/website/
 
 test_files: /root/Cloud-Sandbox/test_files/
 dest_path_test_files: /root/Cloud-Sandbox/test_files/
+
+telegram_vars: /root/Cloud-Sandbox/ansible/vars/telegram_vars.yml
+dest_path_telegram_vars: /root/Cloud-Sandbox/ansible/vars/
