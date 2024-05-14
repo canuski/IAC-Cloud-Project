@@ -5,7 +5,7 @@ services:
     image: canuski/clamavscanner:latest
     restart: unless-stopped
     volumes:
-      - /root/Cloud-Sandbox/ansible/vars/telegram_vars.yml/telegram_vars.yml:/app/telegram_vars.yml
+      - /root/Cloud-Sandbox/ansible/vars/telegram_vars.yml:/app/telegram_vars.yml
       - /root/Cloud-Sandbox/test_files:/app/test_files
     depends_on:
       - clamav
