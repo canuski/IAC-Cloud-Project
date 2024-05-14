@@ -13,7 +13,7 @@ Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een
 │   ├── ansible.cfg           # Config file for ansible 
 │   ├── playbooks             # Playbooks directory
 │   ├── roles                 # Has all the needed roles
-│   └── vars                  # Main variable file, overwritten by Semaphore variables
+│   └── vars                  # Main variable file + Telegram variabelen file, overwritten by Semaphore variables
 ├── docker
 │   ├── docker-compose.yml    # Main docker compose file
 │   ├── test_virus            # All the files needed by docker for test virus script
@@ -38,13 +38,16 @@ Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een
 - Basis begrip van Ansible en YAML syntax.
 
 ### Bewerken van configuratie 
-Configureer eerst twee belangrijke bestanden zodat de deploy lukt.
+Configureer eerst drie belangrijke bestanden zodat de deploy lukt.
 1. **vars/main.yml**
     Als je er geen Semaphore wordt gebruikt moet je de variabelen instellen. Normaal is de default configuratie oke. Als je Semaphore gebruikt kan je de variabelen aanpassen via de environment:
 ![image](https://github.com/canuski/IAC-Cloud-Project/assets/125011800/2c8e9ddc-37df-46e3-a763-33e9a9314e4e)
 
 2. **playbooks/hosts**
     Voeg hier het ip adres van je target toe. Er staat een voorbeeld configuratie, verwijder deze en voeg onder ```[nodes]``` het ip toe.
+
+3. **vars/telegram_vars.yml**
+    Pas hier de voorbeeld token en chat id aan naar jouw telegram waarden. Dit is zeer belangrijk, anders werkt de applicatie niet! Om een bot en een chat-id te verkrijgen kan je [deze](https://sendpulse.com/knowledge-base/chatbot/telegram/create-telegram-chatbot) turtoial volgen, of een youtube video,...
 
 ### Het playbook uitvoeren
 Nadat de hosts file is aangepast kan je de playbook uitvoeren met het volgende commando (open een terminal in /ansible/):
