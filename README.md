@@ -14,6 +14,7 @@ Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een
 - Detecteert automatisch Linux distro (Rocky, CentOS, Ubuntu) en deployed daarop
 
 ## Video 
+[youtube video](https://youtu.be/MiQU97cDxh8)
 
 ![image](https://github.com/canuski/IAC-Cloud-Project/assets/125011800/f521a13a-1dad-41fa-8df6-8643708a2b87)
 ![image](https://github.com/canuski/IAC-Cloud-Project/assets/125011800/4630a313-5806-4809-9f0f-19217519a0b4)
