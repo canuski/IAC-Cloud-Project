@@ -2,7 +2,7 @@
 Projectopdracht Oscar Alexander
 
 ## Introductie
-Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een volledig functioneel, cloud-ready open-source solution op Rocky Linux 9 te bouwen. Deze rol zorgt voor gemakkelijke deployment over verschillende IAAS cloud providers of VM environments.  Het is ontworpen om een gemakkelijk te bereiken virus scanner in werking te brengen a.d.h.v Clamav scans. Je upload files via een local hosted website, en krijgt daarna het resultaat van de scan op je gsm te zien.
+Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een volledig functioneel, cloud-ready open-source solution op Rocky Linux 9 te bouwen. Deze rol zorgt voor gemakkelijke deployment over verschillende IAAS cloud providers of VM environments.  Het is ontworpen om een gemakkelijk te bereiken virus scanner in werking te brengen a.d.h.v Clamav scans. Je upload files via een local hosted website, en krijgt daarna het resultaat van de scan op je gsm te zien. Door zelf geschreven code en docker images, gecombineerd met open-source docker images en software, is dit project tot een goed einde gekomen.
 <br></br>
 
 ## Key features
