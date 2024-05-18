@@ -17,8 +17,8 @@ Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een
 [youtube video](https://youtu.be/MiQU97cDxh8)
 
 ![image](https://github.com/canuski/IAC-Cloud-Project/assets/125011800/f521a13a-1dad-41fa-8df6-8643708a2b87)
-![image](https://github.com/canuski/IAC-Cloud-Project/assets/125011800/4630a313-5806-4809-9f0f-19217519a0b4)
 ![image](https://github.com/canuski/IAC-Cloud-Project/assets/125011800/919dc300-5a94-44d4-b8f5-9321a5a4a23d)
+![image](https://github.com/canuski/IAC-Cloud-Project/assets/125011800/4630a313-5806-4809-9f0f-19217519a0b4)
 
 ## Project Structuur Overzicht
 ```
