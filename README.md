@@ -6,6 +6,14 @@ Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een
 <br></br>
 ![Screenshot Telegram](image.png)
 
+## Key features
+- Automatische malware scanner
+- Website om files te sturen die gescant moeten worden
+- Resultaten op in Telegram chat
+- Deploybaar via Ansible
+- Deploybaar via Semaphore
+- Detecteert automatisch Linux distro (Rocky, CentOS, Ubuntu) en deployed daarop
+
 ## Project Structuur Overzicht
 ```
 .
@@ -29,6 +37,7 @@ Deze Magnum Opus voor het vak 'Infrastructure As Code' heeft de bedoeling om een
 ├── vars                      # Env file
 └── website                   # Website files
 ```
+
 # Vereisten
 - Operating System: Rocky Linux 9 met de meest recente updates.
 - Ansible
